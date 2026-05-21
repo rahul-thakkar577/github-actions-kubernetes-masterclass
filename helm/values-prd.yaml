@@ -1,0 +1,24 @@
+environment: production
+
+backend:
+  replicaCount: 3
+  image:
+    tag: stable
+  resources:
+    requests:
+      cpu: 500m
+      memory: 256Mi
+    limits:
+      memory: 512Mi
+
+frontend:
+  replicaCount: 3
+  image:
+    tag: stable
+
+mysql:
+  storage: 5Gi
+
+service:
+  frontend:
+    nodePort: 30082

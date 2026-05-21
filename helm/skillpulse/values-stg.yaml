@@ -1,0 +1,24 @@
+environment: staging
+
+backend:
+  replicaCount: 2
+  image:
+    tag: latest
+  resources:
+    requests:
+      cpu: 200m
+      memory: 128Mi
+    limits:
+      memory: 256Mi
+
+frontend:
+  replicaCount: 2
+  image:
+    tag: latest
+
+mysql:
+  storage: 2Gi
+
+service:
+  frontend:
+    nodePort: 30081

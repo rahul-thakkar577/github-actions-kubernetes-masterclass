@@ -1,0 +1,24 @@
+environment: dev
+
+backend:
+  replicaCount: 1
+  image:
+    tag: 132dd6e91be29f20d43fe8c3c4993e3e699960a3
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+    limits:
+      memory: 128Mi
+
+frontend:
+  replicaCount: 1
+  image:
+    tag: 132dd6e91be29f20d43fe8c3c4993e3e699960a3
+
+mysql:
+  storage: 1Gi
+
+service:
+  frontend:
+    nodePort: 30080

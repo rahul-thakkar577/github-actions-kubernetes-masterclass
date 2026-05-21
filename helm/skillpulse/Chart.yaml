@@ -1,0 +1,6 @@
+apiVersion: v2
+name: skillpulse
+description: SkillPulse 3-tier app - Go + JS + MySQL
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

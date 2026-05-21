@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.environment }}
+  labels:
+    app: skillpulse
+    env: {{ .Values.environment }}

@@ -1,0 +1,23 @@
+name: Code quality scan
+on:
+    workflow_call: 
+
+jobs:
+    code-scan:
+        runs-on: ubuntu-latest
+        permissions:
+          contents: read
+        steps:
+            - name: Code Checkout
+              uses: actions/checkout@v4
+            - name: Set up Go
+              uses: actions/setup-go@v5
+              with:
+                go-version: '1.26'
+                check-latest: true
+            - name: Install gosec
+              run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+            - name: Run gosec
+              run: |
+                cd backend
+                gosec -severity high ./...
